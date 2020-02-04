@@ -34,6 +34,32 @@ let lightRed = Color(hue: 10, saturation: 80, brightness: 80, alpha: 75)
 
 // Begin your solution here...
 
+//Make a list of points
+
+var polygonVertices: [Point] = []
+polygonVertices.append(Point(x: 25, y: 50))
+polygonVertices.append(Point(x: 175, y: 50))
+polygonVertices.append(Point(x: 225, y: 150))
+polygonVertices.append(Point(x: 75, y: 150))
+
+
+canvas.drawCustomShape(with: polygonVertices)
+
+
+
+// Horizontal lines
+for y in stride(from: 0, through: 600, by: 50) {
+    
+    
+    canvas.drawLine(from: Point(x: 0, y: y), to: Point(x: 400, y: y))
+    
+}
+    
+for x in stride(from: 0, through: 600, by: 50) {
+    
+    canvas.drawLine(from: Point(x: x, y: 0), to: Point(x: x, y: 600))
+    
+}
 
 /*:
  ## Use Source Control
