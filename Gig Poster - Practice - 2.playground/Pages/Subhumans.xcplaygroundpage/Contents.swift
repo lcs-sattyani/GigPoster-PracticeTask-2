@@ -32,34 +32,85 @@ let purple = Color(hue: 304, saturation: 40, brightness: 64, alpha: 100)
 let brown = Color(hue: 38, saturation: 99, brightness: 38, alpha: 100)
 let lightRed = Color(hue: 10, saturation: 80, brightness: 80, alpha: 75)
 
+
+canvas.fillColor = yellow
+canvas.drawRectangle(at: Point(x:0, y:0), width: 400, height: 600)
 // Begin your solution here...
 
 //Make a list of points
 
-var polygonVertices: [Point] = []
-polygonVertices.append(Point(x: 25, y: 50))
-polygonVertices.append(Point(x: 175, y: 50))
-polygonVertices.append(Point(x: 225, y: 150))
-polygonVertices.append(Point(x: 75, y: 150))
+//made the polygons in the bottom row
+for x in stride(from: -135, through: 345, by: 150 + 10) {
+    x
+    // Set the color
+    if x == -135 || x == 185 {
+         canvas.borderColor = brown
+        canvas.fillColor = brown
+    } else {
+         canvas.borderColor = purple
+        canvas.fillColor = purple
+    }
+    //make points for the polygon
+    var polygonVertices: [Point] = []
+    polygonVertices.append(Point(x: x, y: 50))
+    polygonVertices.append(Point(x: x + 150, y: 50))
+    polygonVertices.append(Point(x: x + 200, y: 150))
+    polygonVertices.append(Point(x: x + 50, y: 150))
+    
+    canvas.drawCustomShape(with: polygonVertices)
 
+}
+
+for x in stride(from: -135, through: 345, by: 150 + 10) {
+    x
+    // Set the color
+    if x == -135 || x == 185 {
+        canvas.borderColor = brown
+        canvas.fillColor = brown
+    } else {
+        canvas.borderColor = purple
+        canvas.fillColor = purple
+    }
+    
+    var polygonVertices: [Point] = []
+    polygonVertices.append(Point(x: x, y: 225))
+    polygonVertices.append(Point(x: x + 150, y: 225))
+    polygonVertices.append(Point(x: x + 200, y: 325))
+    polygonVertices.append(Point(x: x + 50, y: 325))
+    
+    canvas.drawCustomShape(with: polygonVertices)
+
+}
+
+for x in stride(from: -145, through: 345, by: 150 + 10){
+var polygonVertices: [Point] = []
+    canvas.borderColor = lightRed
+canvas.fillColor = lightRed
+polygonVertices.append(Point(x: x, y: 140))
+polygonVertices.append(Point(x: x + 150, y: 140))
+polygonVertices.append(Point(x: x + 200, y: 240))
+polygonVertices.append(Point(x: x + 50, y: 240))
 
 canvas.drawCustomShape(with: polygonVertices)
 
+}
+
+canvas.drawText(message: "subhumans", at: Point(x: 15, y:325), size: 50)
 
 
 // Horizontal lines
-for y in stride(from: 0, through: 600, by: 50) {
+//for y in stride(from: 0, through: 600, by: 50) {
     
     
-    canvas.drawLine(from: Point(x: 0, y: y), to: Point(x: 400, y: y))
+    //canvas.drawLine(from: Point(x: 0, y: y), to: Point(x: 400, y: y))
     
-}
+
     
-for x in stride(from: 0, through: 600, by: 50) {
+//for x in stride(from: 0, through: 600, by: 50) {
     
-    canvas.drawLine(from: Point(x: x, y: 0), to: Point(x: x, y: 600))
+    //canvas.drawLine(from: Point(x: x, y: 0), to: Point(x: x, y: 600))
     
-}
+
 
 /*:
  ## Use Source Control
